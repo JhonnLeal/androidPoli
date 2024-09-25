@@ -28,4 +28,9 @@
         android:name="com.example.gardenkeeper.ui.recordatorios.RecordatoriosFragment"
         android:label="Recordatorios"
         tools:layout="@layout/fragment_recordatorios" />
+    <fragment
+        android:id="@+id/nav_plant_profile"
+        android:name="com.example.gardenkeeper.ui.plantprofile.Plantprofilefragment"
+        tools:layout="@layout/fragment_plant_profile" />
+
 </navigation>

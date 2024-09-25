@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- Barra de búsqueda para buscar por tipo de planta -->
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/search_plant_type"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:queryHint="Buscar por tipo de planta"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <!-- Imagen de la planta -->
+    <ImageView
+        android:id="@+id/plant_image"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/plant_image_placeholder"
+        app:layout_constraintTop_toBottomOf="@id/search_plant_type"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <!-- Tipo de planta -->
+    <TextView
+        android:id="@+id/plant_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tipo de planta: "
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/plant_image"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <!-- Ubicación (lugar dentro de la casa o la oficina) -->
+    <TextView
+        android:id="@+id/plant_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ubicación: "
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/plant_type"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp" />
+
+    <!-- Necesidades de la planta -->
+    <TextView
+        android:id="@+id/plant_needs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Necesidades: "
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/plant_location"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp" />
+
+    <!-- Observaciones de la planta -->
+    <TextView
+        android:id="@+id/plant_observations"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Observaciones: "
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/plant_needs" />
+
+    <!-- Botón flotante para añadir nueva planta -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_add_plant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="20dp"
+        android:contentDescription="Añadir Nueva Planta"
+        android:src="@android:drawable/ic_input_add"
+        app:backgroundTint="@color/green"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:tint="@android:color/white" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
