@@ -6,7 +6,7 @@
     android:orientation="vertical"
     tools:context=".ui.recordatorios.RecordatoriosFragment">
 
-    <!-- Toolbar en la parte superior -->
+    <!-- Toolbar -->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -14,82 +14,39 @@
         android:background="?attr/colorPrimary"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
 
-    <!-- CalendarView ocupando el resto del espacio -->
-    <CalendarView
-        android:id="@+id/calendarView"
+    <!-- Button to open Calendar -->
+    <Button
+        android:id="@+id/btnOpenCalendar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Agregar Recordatorio" />
+
+    <!-- EditText for Note -->
+    <EditText
+        android:id="@+id/etNote"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="?attr/actionBarSize" />
+        android:hint="Ingrese Nota" />
 
-    <!-- ScrollView para permitir desplazamiento -->
+    <!-- TextView to display selected date and note -->
+    <TextView
+        android:id="@+id/tvReminder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp" />
+
+    <!-- ScrollView for existing reminders (if needed) -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1">
 
-        <!-- Lista de recordatorios -->
         <LinearLayout
+            android:id="@+id/remindersContainer"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <!-- Recordatorio 1 -->
-            <TextView
-                android:id="@+id/reminder1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Regar la planta (cada 3 días)"
-                android:padding="8dp" />
-
-            <!-- Recordatorio 2 -->
-            <TextView
-                android:id="@+id/reminder2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Fertilizar la planta (una vez al mes)"
-                android:padding="8dp" />
-
-            <!-- Recordatorio 3 -->
-            <TextView
-                android:id="@+id/reminder3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Revisar plagas (cada semana)"
-                android:padding="8dp" />
-
-            <!-- Recordatorio 4 -->
-            <TextView
-                android:id="@+id/reminder4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Podar la planta (cada 2 meses)"
-                android:padding="8dp" />
-
-            <!-- Recordatorio 5 -->
-            <TextView
-                android:id="@+id/reminder5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Cambiar la maceta (cada año)"
-                android:padding="8dp" />
-
-            <!-- Recordatorio 6 -->
-            <TextView
-                android:id="@+id/reminder6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Ajustar la luz solar (mensualmente)"
-                android:padding="8dp" />
-
-            <!-- Recordatorio 7 -->
-            <TextView
-                android:id="@+id/reminder7"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Limpiar hojas (cada 15 días)"
-                android:padding="8dp" />
-
-        </LinearLayout>
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical" />
 
     </ScrollView>
 

@@ -1,31 +1,55 @@
 package com.example.gardenkeeper.ui.recordatorios
 
-import androidx.fragment.app.viewModels
+import android.app.DatePickerDialog
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
+import android.widget.LinearLayout
+import android.widget.TextView
+import androidx.fragment.app.Fragment
 import com.example.gardenkeeper.R
+import java.util.Calendar
 
 class RecordatoriosFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = RecordatoriosFragment()
-    }
+    // ... other code ...
 
-    private val viewModel: RecordatoriosViewModel by viewModels()
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+        val btnOpenCalendar = view.findViewById<Button>(R.id.btnOpenCalendar)
+        val etNote = view.findViewById<EditText>(R.id.etNote)
+        val tvReminder = view.findViewById<TextView>(R.id.tvReminder)
+        val remindersContainer = view.findViewById<LinearLayout>(R.id.remindersContainer)
 
-        // TODO: Use the ViewModel
-    }
+        btnOpenCalendar.setOnClickListener {
+            val calendar = Calendar.getInstance()
+            val year = calendar.get(Calendar.YEAR)
+            val month = calendar.get(Calendar.MONTH)
+            val day = calendar.get(Calendar.DAY_OF_MONTH)
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        return inflater.inflate(R.layout.fragment_recordatorios, container, false)
+            val datePickerDialog = DatePickerDialog(
+                requireContext(),
+                { _, selectedYear, selectedMonth, selectedDayOfMonth ->
+                    val selectedDate = "$selectedDayOfMonth/${selectedMonth + 1}/$selectedYear"
+                    val note = etNote.text.toString()
+                    val reminderText = "$selectedDate - $note"
+
+                    // Display the reminder in tvReminder
+                    //tvReminder.text = reminderText
+
+                    // Create a new TextView for the reminder and add it to the container
+                    val reminderTextView = TextView(requireContext())
+                    reminderTextView.text = reminderText
+                    reminderTextView.setPadding(8, 8, 8, 8)
+                    remindersContainer.addView(reminderTextView)
+                },
+                year,
+                month,
+                day
+            )
+            datePickerDialog.show()
+        }
     }
 }

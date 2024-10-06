@@ -22,7 +22,6 @@
         android:name="com.example.gardenkeeper.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
-
     <fragment
         android:id="@+id/nav_recordatorios"
         android:name="com.example.gardenkeeper.ui.recordatorios.RecordatoriosFragment"
