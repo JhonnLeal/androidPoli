@@ -28,5 +28,9 @@
             android:id="@+id/nav_plant_profile"
             android:icon="@drawable/ic_plant_profile_black"
             android:title="Perfil de Planta" />
+        <item
+            android:id="@+id/nav_web"
+            android:icon="@mipmap/ic_web_foreground"
+            android:title="Web" />
     </group>
 </menu>
