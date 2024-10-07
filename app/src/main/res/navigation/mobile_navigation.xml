@@ -31,5 +31,10 @@
         android:id="@+id/nav_plant_profile"
         android:name="com.example.gardenkeeper.ui.plantprofile.Plantprofilefragment"
         tools:layout="@layout/fragment_plant_profile" />
+    <fragment
+        android:id="@+id/nav_web"
+        android:name="com.example.gardenkeeper.ui.web.WebFragment"
+        android:label="Web"
+        tools:layout="@layout/fragment_web" />
 
 </navigation>
