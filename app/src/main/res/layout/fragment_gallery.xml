@@ -76,6 +76,7 @@
         app:layout_constraintStart_toEndOf="@id/evolution_label"
         app:layout_constraintTop_toTopOf="@id/evolution_label" />
 
+
     <!-- Campo de búsqueda -->
     <androidx.appcompat.widget.SearchView
         android:id="@+id/search_view"
