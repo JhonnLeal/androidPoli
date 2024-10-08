@@ -20,25 +20,25 @@ class VideoFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        // Infla el diseño del fragmento
+
         val view = inflater.inflate(R.layout.fragment_video, container, false)
 
-        // Inicializa el VideoView
+
         videoView = view.findViewById(R.id.videoView)
 
-        // Configura el video
-        val videoUri: Uri = Uri.parse("android.resource://${requireActivity().packageName}/${R.raw.plantas}") // Reemplaza "tu_video" con el nombre de tu archivo de video
+
+        val videoUri: Uri = Uri.parse("android.resource://${requireActivity().packageName}/${R.raw.plantas}")
         videoView.setVideoURI(videoUri)
 
-        // Agrega los controles de media
+
         val mediaController = MediaController(requireContext())
         mediaController.setAnchorView(videoView)
         videoView.setMediaController(mediaController)
 
-        // Inicia la reproducción del video
+
         videoView.setOnPreparedListener { mediaPlayer: MediaPlayer ->
-            mediaPlayer.isLooping = true // Hacer que el video se repita
-            videoView.start() // Comienza a reproducir el video
+            mediaPlayer.isLooping = true
+            videoView.start()
         }
 
         return view
@@ -46,17 +46,17 @@ class VideoFragment : Fragment() {
 
     override fun onPause() {
         super.onPause()
-        videoView.pause() // Pausa el video cuando el fragmento está pausado
+        videoView.pause()
     }
 
     override fun onResume() {
         super.onResume()
-        videoView.start() // Reanuda la reproducción cuando el fragmento es visible nuevamente
+        videoView.start()
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
-        videoView.stopPlayback() // Detiene la reproducción del video al destruir la vista
+        videoView.stopPlayback()
     }
 }
 
