@@ -37,20 +37,21 @@
     <fragment
         android:id="@+id/nav_plant_profile"
         android:name="com.example.gardenKeeper.ui.plantprofile.PlantProfileFragment"
-        android:label="Perfiles de Plantas"
+        android:label="@string/Plant_profile_label"
         tools:layout="@layout/fragment_plant_profiles">
         <action
             android:id="@+id/action_menu_to_plantProfileFragment"
-            app:destination="@id/nav_plant_profile"/>
+            app:destination="@id/addPlantFragment"/>
     </fragment>
 
         <!-- Fragmento para agregar una nueva planta -->
     <fragment
         android:id="@+id/addPlantFragment"
-        android:name="com.example.gardenKeeper.ui.plantprofile.AddPlantFragment">
+        android:name="com.example.gardenKeeper.ui.plantprofile.AddPlantFragment"
+        android:label="@string/add_plant_label">
         <action
-            android:id="@+id/action_addPlantFragment_to_plantProfileFragment"
-            app:destination="@id/plantProfileFragment" />
+            android:id="@+id/action_addPlantFragment_to_nav_plant_profile"
+            app:destination="@id/nav_plant_profile" />
     </fragment>
 
     <fragment
