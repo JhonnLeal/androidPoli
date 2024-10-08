@@ -28,11 +28,18 @@
         android:label="Recordatorios"
         tools:layout="@layout/fragment_recordatorios" />
 
+
     <fragment
         android:id="@+id/nav_web"
         android:name="com.example.gardenkeeper.ui.web.WebFragment"
         android:label="Web"
         tools:layout="@layout/fragment_web" />
+
+    <fragment
+        android:id="@+id/nav_videos"
+        android:name="com.example.gardenkeeper.ui.video.VideoFragment"
+        android:label="Videos"
+        tools:layout="@layout/fragment_video" />
 
     <fragment
         android:id="@+id/nav_plant_profile"

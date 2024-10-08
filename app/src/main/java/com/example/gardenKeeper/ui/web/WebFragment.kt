@@ -20,11 +20,11 @@ class WebFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_web, container, false)
 
-        // Inicializa el WebView y SearchView
+
         webView = view.findViewById(R.id.webView)
         searchView = view.findViewById(R.id.searchView)
 
-        // Configura el SearchView
+
         setupSearchView()
 
         return view
@@ -38,7 +38,7 @@ class WebFragment : Fragment() {
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
-                // Aquí puedes manejar los cambios en la búsqueda si es necesario
+
                 return false
             }
         })
@@ -47,7 +47,7 @@ class WebFragment : Fragment() {
     private fun loadUrl(query: String?) {
         val url = if (!query.isNullOrEmpty()) {
             if (!query.startsWith("http://") && !query.startsWith("https://")) {
-                "https://$query" // Cambia http a https
+                "https://$query"
             } else {
                 query
             }
@@ -55,7 +55,7 @@ class WebFragment : Fragment() {
             null
         }
 
-        // Cargar la URL en el WebView solo si no es nula
+
         url?.let {
             webView.loadUrl(it)
         }
@@ -63,7 +63,7 @@ class WebFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
-        // Limpiar el WebView al destruir la vista
+
         webView.loadUrl("about:blank")
     }
 }
